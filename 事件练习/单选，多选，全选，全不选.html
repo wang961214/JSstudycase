@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 500px;
+            height: 100px;
+            /*border:1px solid #000000;*/
+            padding: 20px;
+            margin: 20px auto;
+            line-height: 20px;
+            background: lightskyblue;
+            border-radius: 10px;
+        }
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 10px;
+            background: lightcyan;
+        }
+
+        select {
+            padding-left: 15px;
+            width: 150px;
+            height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<!--type=0-->
+<div id="single">
+    <input type="radio" name="hobby" value="宫保鸡丁"><span>宫保鸡丁</span>
+    <input type="radio" name="hobby" value="鱼香肉丝"><span>鱼香肉丝</span>
+    <input type="radio" name="hobby" value="酸菜鱼"><span>酸菜鱼</span>
+    <input type="radio" name="hobby" value="糖醋排骨"><span>糖醋排骨</span>
+    <br><br>
+    <button type="button" onclick="Menue('single',0)">提交信息</button>
+</div>
+<!--type=1-->
+<div id="alot">
+    <input type="checkbox" value="宫保鸡丁"><span>宫保鸡丁</span>
+    <input type="checkbox" value="鱼香肉丝"><span>鱼香肉丝</span>
+    <input type="checkbox" value="酸菜鱼"><span>酸菜鱼</span>
+    <input type="checkbox" value="糖醋排骨"><span>糖醋排骨</span>
+    <br><br>
+    <button onclick="Menue('alot',1)">提交菜单</button>
+    <button onclick="Menue.allselect('alot')">全选</button>
+    <button onclick="Menue.reverseSelect('alot')">反选</button>
+    <button onclick="Menue.allNot('alot')">全不选</button>
+</div>
+<!--type=2-->
+<div id="selectBox">
+    <select name="" id="select">
+        <option value="宫保鸡丁">宫保鸡丁</option>
+        <option value="鱼香肉丝">鱼香肉丝</option>
+        <option value="酸菜鱼">酸菜鱼</option>
+        <option value="糖醋排骨">糖醋排骨</option>
+    </select>
+    <br><br>
+    <button onclick="Menue('select',2)">提交菜单</button>
+</div>
+<script>
+    function Menue(id, type) {
+        //----获取对应的区域
+        var section = document.getElementById(id);
+        //----获取input的数量
+        var inPut = section.getElementsByTagName("input");
+        //----用来存放多选的项
+        var str = "";
+        for (var i = 0; i < inPut.length; i++) {
+            if (inPut[i].checked) {
+                if (type === 0) {
+                    alert(inPut[i].value);
+                    break;
+                } else {
+                    str += inPut[i].value + " ";
+                }
+            }
+        }
+        if (type === 1) {
+            alert(str);//-------循环完输出多选的值.
+        }
+        if (type === 2) {
+            alert(section.value);
+        }
+    }
+    //---全选
+    Menue.allselect = function (id) {
+        var section = document.getElementById(id);
+        var inPut = section.getElementsByTagName("input");
+        for (var i = 0; i < inPut.length; i++) {
+            inPut[i].checked = true;
+        }
+    };
+    //---全不选
+    Menue.allNot = function (id) {
+        var section = document.getElementById(id);
+        var inPut = section.getElementsByTagName("input");
+        for (var i = 0; i < inPut.length; i++) {
+            inPut[i].checked = false;
+        }
+    };
+    //---反选
+    Menue.reverseSelect = function (id) {
+        var section = document.getElementById(id);
+        var inPut = section.getElementsByTagName("input");
+        for (var i = 0; i < inPut.length; i++) {
+            if (inPut[i].checked) {
+                inPut[i].checked = false;
+            } else {
+                inPut[i].checked = true;
+            }
+        }
+    };
+</script>
+</body>
+</html>

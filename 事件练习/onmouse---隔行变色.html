@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        table {
+            width: 500px;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th {
+            background: #09c;
+            color: #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            border: 1px solid gray;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <table>
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>技能</th>
+        </tr>
+        </thead>
+        <tbody id="target">
+        <tr>
+            <td>1</td>
+            <td>吕布</td>
+            <td>20</td>
+            <td>大刀</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>牛魔</td>
+            <td>20</td>
+            <td>牛角</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>李白</td>
+            <td>18</td>
+            <td>好剑</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>虞姬</td>
+            <td>20</td>
+            <td>射手</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>荆轲</td>
+            <td>20</td>
+            <td>刺客</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    var tbody = document.getElementById("target");
+    var trs = tbody.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        if (i % 2 === 0) {
+            trs[i].style.background = "lightblue";
+        } else {
+            trs[i].style.background = "lightgrey";
+        }
+    }
+    var color = "";//----颜色样式保存器
+    for (var i = 0; i < trs.length; i++) {
+        trs[i].onmouseover = function () {
+            color = this.style.background;//-----先获取当前的背景颜色
+            this.style.background = "#fff";
+        };
+        trs[i].onmouseout = function () {
+            this.style.background=color;//------离开时恢复初始颜色
+        };
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            width: 500px;
+            height: 100px;
+            background:lightskyblue;
+            border-radius: 10px;
+            margin: 50px auto;
+            text-align: center;
+            line-height: 100px;
+        }
+        span{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        input{
+            margin-left: 10px;
+            padding-left: 10px;
+            width: 200px;
+            height: 30px;
+            border:none;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<span>京东搜索</span>
+    <input type="text" placeholder="Web全栈" id="inp">
+</div>
+<script>
+    var inp = document.getElementById("inp");
+    //-----输入框获取焦点事件
+    inp.onfocus = function () {
+        inp.style.color="red";
+        inp.placeholder = "";
+    };
+    //------输入框失去焦点事件
+    inp.onblur =function () {
+        if(inp.value===""){
+            inp.placeholder ="Web全栈";
+        }else{
+            alert("正在搜索，请稍等！");
+            location.href = "http://www.jd.com";
+        }
+    }
+</script>
+</body>
+</html>

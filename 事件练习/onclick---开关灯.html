@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: #fff;
+        }
+        img{
+            margin:200px 300px;
+            width: 500px;
+            border-radius: 15px;
+        }
+        input{
+            display:block;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="button" value="关 灯" id="btn">
+    <img src="../img/03-1.jpg" alt="" >
+
+<script>
+    var butn = document.getElementById("btn");
+    var bg = document.getElementsByTagName("body")[0];
+    var flag = 0;
+    butn.onclick = function () {
+        if (flag===0){
+            flag=1;
+            bg.style.background="#000";
+            butn.value = "开灯"
+        }else{
+            flag=0;
+            bg.style.background="#fff";
+            butn.value = "关灯"
+        }
+    }
+</script>
+</body>
+</html>

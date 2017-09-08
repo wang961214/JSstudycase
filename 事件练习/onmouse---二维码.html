@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nodeSmall{
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            background: url("../img/4-2.png") -159px -50px no-repeat;
+            position: fixed;
+            right: 30px;
+            bottom:50%;
+        }
+        .erweima{
+            display: none;
+            position: absolute;
+            top: -60px;
+            right: 60px;
+            width: 200px;
+            height: 200px;
+            background: url("../img/4-2-erweima.jpg");
+            background-size: cover;
+            border-radius: 10px;
+        }
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="nodeSmall" id="node_small">
+    <div class="erweima" id="er">
+
+    </div>
+</div>
+<script>
+    var nodeSmall = document.getElementById("node_small");
+    var erweima = document.getElementById("er");
+    nodeSmall.onmouseover =function () {
+        erweima.className="erweima show";
+    };
+    nodeSmall.onmouseout =function () {
+        erweima.className=er.className.replace("show","hide");
+    }
+</script>
+</body>
+</html>

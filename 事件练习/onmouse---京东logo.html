@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.logo{*/
+            /*cursor: pointer;*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*background: url("../img/4.jpg") center center no-repeat;*/
+        /*}*/
+        /*.logo:hover{*/
+            /*background: url("../img/3.jpg") center center no-repeat;*/
+        /*}*/
+        
+        img {
+            cursor: pointer;
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="logo">
+    <img src="../img/3.jpg" alt="">
+</div>
+<script>
+    var img =document.getElementsByTagName("img")[0];
+    img.onmouseover =function () {
+        img.src = "../img/4.jpg";
+    };
+    img.onmouseout =function () {
+        img.src = "../img/3.jpg";
+    }
+</script>
+</body>
+</html>

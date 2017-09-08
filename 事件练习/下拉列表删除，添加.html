@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 800px;
+            margin: 50px auto;
+            border: 1px solid grey;
+            border-radius: 10px;
+        }
+
+        select {
+            margin: 20px 60px;
+            width: 200px;
+            height: 300px;
+            background: lightskyblue;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        input {
+            width: 60px;
+            height: 30px;
+            background: lightgreen;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <select id="box1" multiple="multiple">
+        <option value="0">炒饼</option>
+        <option value="1">板面</option>
+        <option value="2">海参炒面</option>
+        <option value="3">北京烤鸭</option>
+        <option value="4">九九鸭脖</option>
+        <option value="5">烧烤</option>
+        <option value="6">蒜蓉扇贝</option>
+        <option value="7">烤腰子</option>
+        <option value="8">麻辣龙虾</option>
+        <option value="9">椒盐排骨</option>
+        <option value="10">皮皮虾</option>
+    </select>
+    <input type="button" value="添加" onclick="add()">
+    <input type="button" value="删除" onclick="del()">
+    <select id="box2" multiple="multiple">
+
+    </select>
+</div>
+<script>
+    var box1 = document.getElementById("box1");
+    var box2 = document.getElementById("box2");
+    function add() {
+        for (var i = 0; i < box1.length; i++) {
+            var opt = box1.options[i];//----获取下拉框的某个值
+            if (opt.selected === true) {
+                box2.options.add(new Option(opt.text, opt.value));
+                box1.remove(i);
+            }
+        }
+    }
+    function del() {
+        for (var i = 0; i < box2.length; i++) {
+            var opt = box2.options[i];//----获取下拉框的某个值
+            if (opt.selected === true) {
+                box1.options.add(new Option(opt.text, opt.value));
+                box2.remove(i);
+            }
+        }
+    }
+</script>
+</body>
+</html>

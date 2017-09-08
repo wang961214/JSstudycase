@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            height: 40px;
+            background: lightskyblue;
+            line-height: 40px;
+        }
+
+        .nav-inner {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .site-nav-left {
+            cursor: pointer;
+            float: left;
+            text-align: center;
+            width: 100px;
+        }
+
+        span {
+            color: #ff0e10;
+        }
+
+        ul {
+            display: none;
+            width: 200px;
+            height: 250px;
+            text-align: center;
+            background: lightgray;
+            list-style: none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        ul li {
+            padding-left: 20px;
+            cursor: pointer;
+        }
+
+        ul li:hover {
+            color: white;
+            background: lightslategray;
+        }
+        .show{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="nav-inner">
+        <div class="site-nav-left" id="box">
+            <div>送至：<span id="box1">北京</span></div>
+            <ul id="box2">
+                <li>北京</li>
+                <li>上海</li>
+                <li>天津</li>
+                <li>江苏</li>
+                <li>深圳</li>
+                <li>苏州</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    var box = document.getElementById("box");
+    var box1 = document.getElementById("box1");
+    var box2 = document.getElementById("box2");
+    box .onmouseover =function () {
+        box2.className="show";
+    };
+    box .onmouseout =function () {
+        box2.className="";
+    };
+    //----取ul下的所有li
+    var lis =box2.getElementsByTagName("li");
+    for (var i=0;i<lis.length;i++){
+        lis[i].onclick = function () {
+            //----把li内容放入box1
+            box1.innerHTML = this.innerHTML;
+            //----移除box2的显示效果
+            box2.className="";
+        }
+    }
+</script>
+</body>
+</html>

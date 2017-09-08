@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background:lightsteelblue;
+        }
+        #container{
+            margin:50px auto;
+            padding: 20px;
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            background: lightgreen;
+            border-radius: 10px;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            font-size: 26px;
+        }
+        img {
+            border-radius: 5px;
+            width: 500px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <a href="#">换图</a>
+    <img id="img" src="../img/03-1.jpg" alt="">
+</div>
+<script>
+var toggle = document.getElementsByTagName("a")[0];
+var img = document.getElementById("img");
+var flag = 1;
+toggle.onclick = function () {
+    if(flag===1){
+        img.src="../img/03-2.jpg";
+        flag=0;
+        return;
+    }else{
+        img.src="../img/03-1.jpg";
+        flag=1;
+        return;
+    }
+}
+</script>
+</body>
+</html>

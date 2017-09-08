@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .nav {
+            height: 25px;
+            width: 100%;
+            background: url("../img/top.jpg");
+            background-size: cover;
+        }
+        .top-banner{
+            width:100%;
+            height: 70px;
+            background: url("../img/topbanner.jpg");
+            background-size:cover;
+            position: relative;
+        }
+        a{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 35px;
+            height: 35px;
+            font-size: 16px;
+            background: #000;
+            text-decoration: none;
+            text-align: center;
+            line-height: 35px; ;
+            color: #fff;
+        }
+        .mid{
+            width:100%;
+            height: 580px;
+            background: url("../img/main.jpg");
+            background-size: cover;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="nav"></div>
+<div class="top-banner" id="topBanner">
+    <a href="#" id="closeBanner"> X </a>
+</div>
+<div class="mid"></div>
+<script>
+    var closeBanner = document.getElementById("closeBanner");
+    var topBanner = document.getElementById("topBanner");
+    closeBanner.onclick = function () {
+        topBanner.className="hide";
+    }
+</script>
+</body>
+</html>
