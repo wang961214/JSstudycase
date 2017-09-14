@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box1">
+    我是div标签
+    <p> 我是P标签 </p>
+</div>
+<h1 id="box2">h1标签</h1>
+<span id="box3">span标签</span>
+<script>
+    var box1= document.getElementById("box1");
+    var box2= document.getElementById("box2");
+    var box3= document.getElementById("box3");
+
+    //-------文档结点
+    console.log(document.nodeValue);//----null
+    //-------标签结点
+    console.log(box1.nodeValue);//----null
+    console.log(box2.nodeValue);//----null
+    console.log(box3.nodeValue);//----null
+    //-------属性结点
+    console.log(box3.getAttributeNode("id").nodeValue);//----box
+    //-------文本节点
+    var txt = box1.firstChild;
+    console.log(txt.nodeValue);//---我是div标签
+</script>
+</body>
+</html>

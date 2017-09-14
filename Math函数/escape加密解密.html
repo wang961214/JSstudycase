@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 500px;
+            text-align: center;
+            background: lightskyblue;
+            border-radius: 10px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        #box, #msg {
+            text-align: left;
+            font-size: 18px;
+            padding: 10px;
+            width: 400px;
+            height: 100px;
+            margin: 10px auto;
+            border-radius: 10px;
+            background: white;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class='container'>
+    <textarea id='box'>
+    </textarea>
+    <button onclick="Encode()">
+        点击加密
+    </button>
+    <button onclick="Decode()">
+        点击解密
+    </button>
+    <button id='btn1' onclick=" Empty()">
+        点击清空
+    </button>
+    <button id='btn2' onclick="Change()">
+        点击交换
+    </button>
+    <textarea id='msg'>
+    </textarea>
+</div>
+<script>
+    var encode = document.getElementById("box");
+    var decode = document.getElementById("msg");
+    Forcus();
+    //加密
+    function Encode(){
+        decode.value = escape(encode.value);
+    }
+    //解密
+    function Decode(){
+        decode.value = unescape(encode.value);
+    }
+    //清空
+    function Empty() {
+        decode.value = "";
+        encode.value = "";
+    }
+    //交换
+    function Change(){
+        var str = decode.value;
+        decode.value =encode.value;
+        encode.value =str;
+    }
+    function Forcus(){
+        encode.focus();
+    }
+</script>
+</body>
+</html>

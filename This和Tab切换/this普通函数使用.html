@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    ////    alert(this);//---------默认this指向Window全局，因为alert归window所有，或者调用，
+    //    var name ="迈克-杰克逊";
+    //    function show(){
+    ////        var name ="迈克-杰克逊";
+    //        alert("名字是："+this.name)
+    //    }
+    //    show();//------是一个单独的函数，创建后归window所管，是window下的一个对象.多以调用指针This指向window
+
+    //    var a = 1;
+    //    function num(){
+    //        var a =2;
+    //        var b =2;
+    //        alert(this.a+b);
+    //    }
+    //    num();
+
+
+    //------作为单独函数使用
+    function code(x) {
+        this.x = x;
+    }
+    code(666);
+    alert(x);
+    //------x变成一个全局的变量，可以通过this把一个局部的变量变成一个全局变量
+</script>
+</body>
+</html>

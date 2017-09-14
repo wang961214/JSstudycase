@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            background: lightskyblue;
+            text-decoration: none;
+            width: 850px;
+            height: 50px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            margin: 50px auto;
+            font-weight: normal;
+        }
+
+        span {
+            display: inline-block;
+            width: 115px;
+            height: 48px;
+            line-height: 50px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        div {
+            display: none;
+            text-align: center;
+            width: 850px;
+            height: 350px;
+            margin: 0 auto;
+            border: 1px solid red;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        div img {
+            margin: 10px 5px;
+            height: 300px;
+            border: 1px dashed lightgray;
+            border-radius: 10px;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .select {
+            border-top: 4px solid red;
+            background: gold;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    <span class="select">预告片</span>
+    <span>电影</span>
+    <span>娱乐</span>
+    <span>八卦</span>
+    <span>体育</span>
+    <span>搞笑</span>
+    <span>综艺</span>
+</h2>
+<div class="show">
+    <img src="../img/1.png" alt="">
+    <img src="../img/2.png" alt="">
+    <img src="../img/3.png" alt="">
+    <img src="../img/4.png" alt="">
+</div>
+<div>
+    <img src="../img/1.png" alt="">
+    <img src="../img/4.png" alt="">
+    <img src="../img/3.png" alt="">
+    <img src="../img/2.png" alt="">
+</div>
+<div>
+    <img src="../img/3.png" alt="">
+    <img src="../img/2.png" alt="">
+    <img src="../img/1.png" alt="">
+    <img src="../img/4.png" alt="">
+</div>
+<div>
+    <img src="../img/1.png" alt="">
+    <img src="../img/3.png" alt="">
+    <img src="../img/3.png" alt="">
+    <img src="../img/1.png" alt="">
+</div>
+<div>
+    <img src="../img/4.png" alt="">
+    <img src="../img/2.png" alt="">
+    <img src="../img/1.png" alt="">
+    <img src="../img/4.png" alt="">
+</div>
+<div>
+    <img src="../img/1.png" alt="">
+    <img src="../img/2.png" alt="">
+    <img src="../img/3.png" alt="">
+    <img src="../img/4.png" alt="">
+</div>
+<div>
+    <img src="../img/1.png" alt="">
+    <img src="../img/2.png" alt="">
+    <img src="../img/3.png" alt="">
+    <img src="../img/4.png" alt="">
+</div>
+<div>
+    <img src="../img/1.png" alt="">
+    <img src="../img/2.png" alt="">
+    <img src="../img/3.png" alt="">
+    <img src="../img/4.png" alt="">
+</div>
+<script>
+    window.onload = function () {
+        var spans = document.getElementsByTagName("span");
+        var divs = document.getElementsByTagName("div");
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].onmouseover = function () {
+                for (var j = 0; j < spans.length; j++) {
+                    if (spans[j] === this) {
+                        spans[j].className = "select";
+                        divs[j].className = "show";
+                    } else {
+                        spans[j].className = "";
+                        divs[j].className = "";
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

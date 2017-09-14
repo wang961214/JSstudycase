@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container">
+    <div id="up">电影列表</div>
+    <div id="mid">动画片</div>
+    <div id="detail">电影简介</div>
+</div>
+<script>
+    var mid =document.getElementById("mid");
+    //-----所有兄弟结点---包括自己
+    var detail = mid.parentNode.children[2];
+    detail.style.color ="red";
+    //-----所有兄弟结点---不包括自己
+    function sibling(obj){
+        var arr = [];
+        //------拿到所有兄弟节点,包括自己
+        var node=obj.parentNode.children;
+        for(var i=0;i<node.length;i++){
+            if(node[i]!=obj){
+                arr.push(node[i]);
+            }
+        }
+        return arr;
+    }
+    sibling(mid)[1].style.fontSize="30px";
+</script>
+</body>
+</html>

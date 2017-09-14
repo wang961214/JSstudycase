@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="outer">
+    <h1>用户登陆系统</h1>
+    <div class="inner">
+        <form action="" method="post">
+            <span>用户名</span>
+            <input type="text" value="" name="nicheng" placeholder="用户名">
+        </form>
+    </div>
+    <div class="detail">
+        <ul>
+            <li>信息一</li>
+            <li>信息二</li>
+            <li>信息三</li>
+        </ul>
+    </div>
+</div>
+<script>
+    //----id获取
+    var outer = document.getElementById("outer");
+    console.log(outer);
+    outer.style.width="300px" ;
+    outer.style.height="300px";
+    outer.style.background="#898989";
+    outer.style.borderRadius="10px";
+    outer.style.textAlign="center";
+    outer.style.fontSize="20px";
+    outer.style.color="#fff";
+
+
+    //-----类名获取
+    var inner =document.getElementsByClassName("inner")[0];
+    inner.style.width="200px" ;
+    inner.style.height="100px";
+    inner.style.margin="10px auto";
+    inner.style.background="#997f47";
+
+    //-----name属性
+    var inp = document.getElementsByName("nicheng")[0];
+    inp.style.width="150px";
+    inp.style.height="30px";
+    inp.style.borderRadius="5px";
+    //------标签名
+    var ul = document.getElementsByTagName("ul")[0];
+    ul.style.listStyle="none";
+    var lis = document.getElementsByTagName("li");
+    for(i in lis){
+        lis[i].style.color = "red";
+    }
+</script>
+</body>
+</html>

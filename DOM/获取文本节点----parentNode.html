@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">获取父节点</div>
+</div>
+<script>
+    var inner =document.getElementById("inner");
+    var outer =inner.parentNode;
+    outer.style.width="200px";
+    outer.style.height="200px";
+    outer.style.border="1px solid #999"
+</script>
+</body>
+</html>
